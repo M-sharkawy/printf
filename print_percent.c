@@ -7,8 +7,9 @@
  * Return: (1) which is size of '%'
  */
 
-int print_percent(void)
+int print_percent(va_list ptr)
 {
+	(void) ptr;
 	_putchar('%');
 	return (1);
 }
