@@ -11,10 +11,12 @@
 
 int print_char(va_list ptr)
 {
-    int i;
-    char character;
+	int i;
+	char character;
 
-    i = _putchar(character);
-    
-    return (i);
+	character = va_arg(ptr,char);
+
+	i = _putchar(character);
+	
+	return (i);
 }
