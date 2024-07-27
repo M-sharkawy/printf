@@ -9,9 +9,7 @@
 
 int print_percent(va_list ptr)
 {
-	char cs;
-
-	cs = va_arg(ptr, int);
-	_putchar(cs);
+	(void)ptr;
+	_putchar('%');
 	return (1);
 }

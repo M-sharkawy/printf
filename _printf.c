@@ -39,8 +39,6 @@ int _printf(const char *format, ...)
 				break;
 			}
 		}
-		if (!types[j].t)
-		length += _putchar('%'), length += _putchar(format[i + 1]), i++;
 	}
 	va_end(ptr);
 	return (length);
