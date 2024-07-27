@@ -14,13 +14,13 @@
 typedef struct funcType
 {
 	char t;
-	int (*f)(va_list);
+	int (*f)();
 } func_type;
 
 int _putchar(char c);
 int _printf(const char *format, ...);
 int print_str(va_list);
 int print_char(va_list);
-int print_percent(va_list);
+int print_percent(void);
 
 #endif
