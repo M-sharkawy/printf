@@ -2,11 +2,9 @@
 
 /**
  * print_char - function for character
+ * @ptr: list of parameters
  *
- * @charachter: charachter
- * @i: integer
- *
- * Return: i
+ * Return: (i)
  */
 
 int print_char(va_list ptr)
@@ -17,6 +15,6 @@ int print_char(va_list ptr)
 	character = va_arg(ptr, int);
 
 	i = _putchar(character);
-	
+
 	return (i);
 }
