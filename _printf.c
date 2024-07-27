@@ -10,7 +10,7 @@
 
 int _printf(const char *format, ...)
 {
-va_list ptr;
+	va_list ptr;
 	int length, i, j;
 	func_type types[] = {
 		{'s', print_str},
