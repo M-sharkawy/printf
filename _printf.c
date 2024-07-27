@@ -22,10 +22,12 @@ va_list ptr;
 	va_start(ptr, format);
 	if (!format || (format[0] == '%' && format[1] == '\0'))
 	{
+		va_end(ptr);
 		return (-1);
 	}
 
 	i = 0;
+	length = 0;
 	for (; format[i]; i++)
 	{
 		if (format[i] != '%')
@@ -40,11 +42,11 @@ va_list ptr;
 			{
 				length += types[j].f(ptr);
 				i++;
-				continue;
+				break;
 			}
 			j++;
 		}
 	}
-
+	va_end(ptr);
 	return (length);
 }
