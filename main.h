@@ -14,7 +14,7 @@
 typedef struct funcType
 {
 	char t;
-	int (*f)();
+	int (*f)(va_list);
 } func_type;
 
 int _putchar(char c);
