@@ -14,7 +14,7 @@ int print_char(va_list ptr)
 	int i;
 	char character;
 
-	character = va_arg(ptr,char);
+	character = va_arg(ptr, int);
 
 	i = _putchar(character);
 	
