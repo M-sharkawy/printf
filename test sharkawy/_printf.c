@@ -10,22 +10,24 @@
 
 int _printf(const char *format, ...)
 {
-va_list ptr;
+	va_list ptr;
 	int length, i, j;
 	func_type types[] = {
-		{.t = 's', .f = print_str},
-		{.t = 'c', .f = print_char},
-		{.t = '%', .f = print_percent},
+		{'s', print_str},
+		{'c', print_char},
+		{'%', print_percent},
 		{'\0', NULL}
 	};
 
 	va_start(ptr, format);
 	if (!format || (format[0] == '%' && format[1] == '\0'))
 	{
+		va_end(ptr);
 		return (-1);
 	}
 
 	i = 0;
+	length = 0;
 	for (; format[i]; i++)
 	{
 		if (format[i] != '%')
@@ -40,11 +42,11 @@ va_list ptr;
 			{
 				length += types[j].f(ptr);
 				i++;
-				continue;
+				break;
 			}
 			j++;
 		}
 	}
-
+	va_end(ptr);
 	return (length);
 }
