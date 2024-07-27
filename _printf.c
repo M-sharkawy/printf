@@ -15,7 +15,6 @@ int _printf(const char *format, ...)
 	func_type types[] = {
 		{'s', print_str},
 		{'c', print_char},
-		{'%', print_percent},
 		{'\0', NULL}
 	};
 
@@ -37,6 +36,9 @@ int _printf(const char *format, ...)
 				length += types[j].f(ptr);
 				i++;
 				break;
+			} else if (format[i + 1] == '%')
+			{
+				length += _putchar('%');
 			}
 		}
 		if (!types[j].t)
