@@ -13,9 +13,9 @@ int _printf(const char *format, ...)
 va_list ptr;
 	int length, i, j;
 	func_type types[] = {
-		{.t = 's', .f = print_str},
-		{.t = 'c', .f = print_char},
-		{.t = '%', .f = print_percent},
+		{'s', print_str},
+		{'c', print_char},
+		{'%', print_percent},
 		{'\0', NULL}
 	};
 
