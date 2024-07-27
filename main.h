@@ -17,5 +17,7 @@ typedef struct funcType
 	int (*f)(va_list);
 } func_type;
 
+int _putchar(char c);
+int _printf(const char *format, ...);
 
 #endif
