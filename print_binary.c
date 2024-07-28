@@ -5,12 +5,18 @@
  * @ptr: list of arguments
  *
  * Return: (length)
+ * otherwise - (0)
  */
 
 int print_binary(va_list ptr)
 {
 	unsigned int ind = va_arg(ptr, int);
 	int remainders[32], j, length = 0, rem;
+
+	if (ind == 0)
+	{
+		return (_putchar('0'));
+	}
 
 	j = 0;
 	while (ind >= 1)
