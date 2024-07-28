@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 	};
 
 	if (!format)
-	return (-1);
+		return (-1);
 
 	va_start(ptr, format);
 	for (i = 0; format && format[i]; i++)
@@ -40,7 +40,11 @@ int _printf(const char *format, ...)
 			}
 		}
 		if (!types[j].t)
-		length += _putchar('%'), length += _putchar(format[i + 1]), i++;
+		{
+			length += _ptchar('%');
+			if (format[i + 1] != '\0')
+			length += _putchar(format[i + 1]), i++;
+		}
 	}
 	va_end(ptr);
 	return (length);
