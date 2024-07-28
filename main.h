@@ -23,5 +23,6 @@ int print_str(va_list);
 int print_char(va_list);
 int print_percent(va_list);
 int print_digit(va_list ptr);
+int print_binary(va_list);
 
 #endif

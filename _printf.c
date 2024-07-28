@@ -14,7 +14,7 @@ int _printf(const char *format, ...)
 	int length = 0, i, j;
 	func_type types[] = {
 		{'s', print_str}, {'c', print_char}, {'%', print_percent},
-		{'d', print_digit}, {'i', print_digit}, {'\0', NULL}
+		{'d', print_digit}, {'i', print_digit}, {'b', print_binary}, {'\0', NULL}
 	};
 
 	if (!format)
