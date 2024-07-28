@@ -13,10 +13,8 @@ int _printf(const char *format, ...)
 	va_list ptr;
 	int length = 0, i, j;
 	func_type types[] = {
-		{'s', print_str},
-		{'c', print_char},
-		{'%', print_percent},
-		{'\0', NULL}
+		{'s', print_str}, {'c', print_char}, {'%', print_percent},
+		{'d', print_digit}, {'i', print_digit}, {'\0', NULL}
 	};
 
 	if (!format)
@@ -30,7 +28,7 @@ int _printf(const char *format, ...)
 			length += _putchar(format[i]);
 			continue;
 		}
-		for (j = 0; types[j].t; j++)
+		for (j = 0; types[j].t != '\0'; j++)
 		{
 			if (format[i + 1] == types[j].t)
 			{
@@ -43,7 +41,10 @@ int _printf(const char *format, ...)
 		{
 			length += _putchar('%');
 			if (format[i + 1] != '\0')
-			length += _putchar(format[i + 1]), i++;
+			{
+				length += _putchar(format[i + 1]);
+				i++;
+			}
 		}
 	}
 	va_end(ptr);
