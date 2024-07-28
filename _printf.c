@@ -41,7 +41,7 @@ int _printf(const char *format, ...)
 		}
 		if (!types[j].t)
 		{
-			length += _ptchar('%');
+			length += _putchar('%');
 			if (format[i + 1] != '\0')
 			length += _putchar(format[i + 1]), i++;
 		}
