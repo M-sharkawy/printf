@@ -5,7 +5,7 @@
  * @ptr: list of arguments
  *
  * Return: (length)
- * otherwise - (0)
+ * otherwise - (1)
  */
 
 int print_binary(va_list ptr)
