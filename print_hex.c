@@ -32,6 +32,7 @@ int convert_to_char(int digit)
  * @ptr: list of arguments
  *
  * Return: (length)
+ * otherwise - (1) if num = 0
  * otherwise - (0) if allocated memory failed
  */
 
@@ -39,13 +40,15 @@ int print_hexdecimal(va_list ptr)
 {
 	unsigned int num, number;
 	int *ram;
-	int i, length;
+	int i, length = 0, counter, digit;
 
 	num = va_arg(ptr, unsigned int);
 	number = num;
+
 	if (num == 0)
 		return (_putchar('0'));
 
+	i = 0;
 	while (num > 0)
 	{
 		num = num / 16;
@@ -56,22 +59,18 @@ int print_hexdecimal(va_list ptr)
 	if (!ram)
 		return (0);
 
-	i = 0;
-	while (number > 0)
+	counter = i;
+	 num = number;
+	while (num > 0)
 	{
-		ram[i] = number % 16;
-		number = number / 16;
-		i++;
+		ram[--i] = num % 16;
+		num /= 16;
 	}
 
-	length = 0;
-	while (i > 0)
+	while (i < counter)
 	{
-		i--;
-		if (ram[i] >= 10 && ram[i] <= 15)
-			length += convert_to_char(ram[i]);
-		else
-			length += _putchar(ram[i] + '0');
+		digit = ram[i++];
+		length += (digit >= 10) ? convert_to_char(digit) : _putchar(digit + '0');
 	}
 
 	free(ram);

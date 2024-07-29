@@ -12,7 +12,7 @@ int print_ocatal(va_list ptr)
 {
 	unsigned int number = va_arg(ptr, unsigned int), temp;
 	int *array;
-	int i, length = 0, rem;
+	int i, length = 0, counter, rem;
 
 	if (number == 0)
 	{
@@ -33,17 +33,17 @@ int print_ocatal(va_list ptr)
 	if (array == NULL)
 		return (0);
 
-	i = 0;
-	while (number > 0)
+	counter = i;
+	temp = number;
+	while (temp > 0)
 	{
-		rem = number % 8;
-		number = number / 8;
-		array[i++] = rem;
+		rem = temp % 8;
+		temp /= 8;
+		array[--i] = rem;
 	}
 
-	while (i > 0)
+	for (i = 0; i < counter; i++)
 	{
-		i--;
 		length += _putchar(array[i] + '0');
 	}
 
