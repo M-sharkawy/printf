@@ -37,7 +37,7 @@ int _printf(const char *format, ...)
 				break;
 			}
 		}
-		if (!types[j].t)
+		if (types[j].t == '\0')
 		{
 			length += _putchar('%');
 			if (format[i + 1] != '\0')
