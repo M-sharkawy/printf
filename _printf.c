@@ -12,11 +12,11 @@ int _printf(const char *format, ...)
 {
 	va_list ptr;
 	int length = 0, i, j;
-	func_type types[] = {
-		{'s', print_str}, {'c', print_char}, {'%', print_percent},
-		{'d', print_digit}, {'i', print_digit}, {'b', print_binary},
-		{'x', print_hexdecimal}, {'X', print_HEXADECIMAL},
-		{'u', print_unsigned}, {'o', print_ocatal}, {'\0', NULL}
+	func_type types[] = { {'s', print_str},
+		{'c', print_char}, {'%', print_percent}, {'d', print_digit},
+		{'i', print_digit}, {'b', print_binary}, {'x', print_hexdecimal},
+		{'X', print_HEXADECIMAL}, {'u', print_unsigned}, {'o', print_ocatal},
+		{'p', print_pointer}, {'\0', NULL}
 	};
 
 	if (!format || (format[0] == '%' && format[1] == '\0'))
