@@ -9,7 +9,7 @@
 
 int print_rev(va_list ptr)
 {
-	int i = 0, length;
+	int i = 0, length = 0;
 	char *str = va_arg(ptr, char *);
 
 	if (str == NULL)
@@ -18,7 +18,6 @@ int print_rev(va_list ptr)
 	while (str[i] != '\0')
 		i++;
 
-	length = 0;
 	while (i >= 0)
 		length += _putchar(str[--i]);
 
