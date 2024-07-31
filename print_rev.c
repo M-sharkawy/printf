@@ -10,7 +10,7 @@
 int print_rev(va_list ptr)
 {
 	int i = 0, length;
-	int *str = va_arg(ptr, char *);
+	char *str = va_arg(ptr, char *);
 
 	if (str == NULL)
 		str = "(null)";
