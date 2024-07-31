@@ -33,6 +33,7 @@ int print_ocatal(va_list);
 int print_pointer(va_list ptr);
 int print_hex_ptr(unsigned long int temp);
 int convert_to_char_ptr(int digit);
+int print_rev(va_list ptr);
 
 
 #endif
